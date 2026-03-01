@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About – Sophie Mearns</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  background: #fefaf7;
+  padding: 60px;
+  line-height: 1.6;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  padding: 30px 60px;
+  background: white;
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+header {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.photo {
+  flex: 1 1 250px;
+  max-width: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  display: block;
+}
+
+.description {
+  flex: 2 1 500px;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+a.back {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    margin-top: 80px;
+  }
+
+  .photo, .description {
+    flex: 1 1 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="cv.html">CV</a>
+  <a href="projects.html">Projects</a>
+</nav>
+
+<header>
+  <div class="photo">
+    <img src="selfie.png" alt="Sophie Mearns">
+  </div>
+  <div class="description">
+    <h1>About Me</h1>
+    <p>
+      I am currently enrolled in UCLA's Master of Library and Information Science program, with an emphasis on archival studies, print, and visual culture. I am most passionate about public access to digital collections, bridging communities and institutions through accessible archival work.
+    </p>
+    <p>
+      Through my experiences at the June L Mazer Archive, Santa Cruz Public Library, and the MAH, I have gained expertise in digitization, metadata creation, collection management, and exhibition preparation. My work balances careful preservation of physical materials with the creation of discoverable, sustainable, and ethically managed digital collections.
+    </p>
+
+    <a class="back" href="index.html">← Back to Home</a>
+  </div>
+</header>
+
+</body>
+</html>
