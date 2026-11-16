@@ -3,607 +3,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Sophie Mearns – Archivist.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sophie Mearns — archival studies, digital collections, media, visual culture, and research.">
-  <title>Sophie Mearns — Archives & Visual Culture</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --paper: #faf8f4;
-      --ink: #242323;
-      --muted: #77716f;
-      --lavender: #dcd1e5;
-      --mauve: #b69ba9;
-      --line: #e7e1dc;
-      --white: #fffefd;
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      line-height: 1.7;
+      font-family: 'Inter', sans-serif;
+      color: #111;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('lavender2.png') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Soft overlay */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 240, 230, 0.6);
     }
 
     /* NAVIGATION */
-
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(250, 248, 244, 0.96);
-      border-bottom: 1px solid var(--line);
-      padding: 20px 7%;
+      position: relative;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 21px;
-    }
-
-    .nav-links {
-      display: flex;
+      justify-content: flex-end;
       gap: 30px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .nav-links a:hover {
-      color: #967b9e;
-    }
-
-    /* INTRODUCTION */
-
-    .hero {
-      min-height: 570px;
-      padding: 110px 10% 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background:
-        linear-gradient(rgba(250,248,244,.83), rgba(250,248,244,.91)),
-        url('lavender2.png') center/cover no-repeat;
-    }
-
-    .eyebrow {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(48px, 7vw, 82px);
+      padding: 30px 60px;
       font-weight: 400;
-      line-height: 1.13;
-      max-width: 850px;
-      margin-bottom: 25px;
+      z-index: 2;
     }
 
-    .hero h1 span {
-      color: #967e9d;
-      font-style: italic;
-    }
-
-    .hero-description {
-      max-width: 600px;
+    nav a {
+      text-decoration: none;
+      color: #111;
       font-size: 16px;
-      color: #5f5a58;
-      line-height: 1.9;
     }
 
-    .hero-links {
-      display: flex;
-      gap: 25px;
-      margin-top: 35px;
-      flex-wrap: wrap;
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    .hero-links a {
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-bottom: 1px solid var(--mauve);
-      padding-bottom: 5px;
+    /* HERO CONTENT */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 60px 120px 60px;
+      max-width: 800px;
     }
 
-    /* GENERAL SECTIONS */
-
-    .content-section {
-      padding: 95px 10%;
-      border-top: 1px solid var(--line);
-      scroll-margin-top: 75px;
+    .hero-content h1 {
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 20px;
     }
 
-    .section-number {
-      color: #967e9d;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-
-    .section-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(34px, 4vw, 49px);
+    .hero-content p {
+      font-size: 22px;
       font-weight: 400;
-      margin-bottom: 16px;
+      line-height: 1.5;
     }
 
-    .section-intro {
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 40px;
-    }
-
-    /* PROJECT CARDS */
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 25px;
-    }
-
-    .project-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(40,30,40,.07);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-content {
-      padding: 25px;
-    }
-
-    .card-label {
-      color: #967e9d;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .card-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 25px;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-
-    .card-content p {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.8;
-      margin-bottom: 18px;
-    }
-
-    .card-link {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-bottom: 1px solid var(--mauve);
-      padding-bottom: 4px;
-    }
-
-    /* CREATIVE SECTION */
-
-    .creative-section {
-      background: #eee8ef;
-    }
-
-    .creative-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      margin-top: 35px;
-    }
-
-    .creative-item {
-      border-top: 1px solid #c9bacd;
-      padding-top: 22px;
-    }
-
-    .creative-item h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-
-    .creative-item p {
-      color: #625b63;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    /* RESEARCH SECTION */
-
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .research-item {
-      padding: 25px;
-      background: var(--white);
-      border: 1px solid var(--line);
-    }
-
-    .research-item h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 21px;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-
-    .research-item p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #292629;
-      color: #f8f4f1;
-      padding: 55px 10%;
+    /* FOOTER BAR */
+    .footer-bar {
+      background-color: #b89488;
+      color: #1e1e1e;
+      padding: 50px 60px;
       display: flex;
       justify-content: space-between;
-      gap: 30px;
       flex-wrap: wrap;
+      gap: 30px;
     }
 
-    footer h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 27px;
-      font-weight: 400;
-      margin-bottom: 10px;
+    .footer-left {
+      font-size: 28px;
+      font-weight: 600;
     }
 
-    footer p {
-      color: #c7bdc5;
-      font-size: 13px;
+    .footer-center,
+    .footer-right {
+      font-size: 16px;
+      line-height: 1.6;
     }
 
-    footer a {
-      color: #e0cce5;
+    .footer-right a {
+      color: #1e1e1e;
       text-decoration: underline;
-      text-underline-offset: 4px;
     }
 
-    /* MOBILE */
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 42px;
+      }
 
-    @media (max-width: 700px) {
+      .hero-content {
+        padding: 0 30px 80px 30px;
+      }
+
       nav {
-        padding: 17px 5%;
-        flex-wrap: wrap;
-        gap: 15px;
+        padding: 20px 30px;
       }
 
-      .nav-links {
-        gap: 13px;
-      }
-
-      .nav-links a {
-        font-size: 10px;
-      }
-
-      .hero {
-        min-height: 500px;
-        padding: 80px 7%;
-      }
-
-      .content-section {
-        padding: 70px 7%;
-      }
-
-      .project-grid,
-      .creative-grid,
-      .research-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card img {
-        height: 220px;
-      }
-
-      footer {
-        padding: 45px 7%;
+      .footer-bar {
+        padding: 40px 30px;
         flex-direction: column;
       }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- NAVIGATION -->
+  <section class="hero">
 
-  <nav>
-    <a class="nav-name" href="index.html">Sophie Mearns</a>
-
-    <div class="nav-links">
-      <a href="#archives">Archives</a>
-      <a href="#media">Visual Culture</a>
-      <a href="#research">Research</a>
-      <a href="about.html">About</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dossier.html">Specialization Dossier</a>
       <a href="cv.html">CV</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Sophie Mearns<br>Archivist.</h1>
+      <p>
+        Passionate about preserving memory and expanding
+        access to community and institutional archives through digital collections.
+        
+      </p>
     </div>
-  </nav>
 
-  <!-- INTRODUCTION -->
-
-  <header class="hero">
-    <div class="eyebrow">
-      UCLA · Library & Information Science
-    </div>
-
-    <h1>
-      Archives,<br>
-      <span>Media & Visual Culture.</span>
-    </h1>
-
-    <p class="hero-description">
-      I am an emerging archivist and researcher interested in
-      cultural memory, digital collections, visual storytelling,
-      and the preservation of historically underrepresented narratives.
-    </p>
-
-    <div class="hero-links">
-      <a href="#archives">Explore my work ↓</a>
-      <a href="cv.html">Curriculum vitae ↗</a>
-    </div>
-  </header>
-
-  <!-- 01 ARCHIVAL PROJECTS -->
-
-  <section class="content-section" id="archives">
-    <div class="section-number">01 / Selected Work</div>
-
-    <h2 class="section-heading">Archival Projects</h2>
-
-    <p class="section-intro">
-      Digital collections, archival description, metadata development,
-      and community-based preservation. My work explores how archival
-      materials can be organized, preserved, and made accessible.
-    </p>
-
-    <div class="project-grid">
-
-      <article class="project-card">
-        <img src="mazer.png"
-             alt="Digital collections project at the June L. Mazer Lesbian Archives">
-
-        <div class="card-content">
-          <div class="card-label">Digital Collections · Metadata</div>
-          <h3>June L. Mazer Lesbian Archives</h3>
-          <p>
-            Digital collection development, Omeka Classic,
-            metadata migration, and workflow documentation
-            supporting access to LGBTQ+ community history.
-          </p>
-          <a class="card-link" href="mazer.html">Explore project ↗</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <img src="scrapbook.png"
-             alt="Historical scrapbook materials from UCSC Special Collections">
-
-        <div class="card-content">
-          <div class="card-label">Special Collections · Digitization</div>
-          <h3>UCSC Special Collections</h3>
-          <p>
-            Archival processing, digitization, and metadata
-            work involving historical materials, community
-            publications, and the Laura Hecox scrapbooks.
-          </p>
-          <a class="card-link" href="library.html">Explore project ↗</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <img src="mahexhibitprep.png"
-             alt="Museum exhibition preparation work">
-
-        <div class="card-content">
-          <div class="card-label">Museum Collections · Exhibitions</div>
-          <h3>Museum of Art & History</h3>
-          <p>
-            Exhibition preparation, artwork handling,
-            installation, and the presentation of cultural
-            materials in public museum spaces.
-          </p>
-          <a class="card-link" href="mah.html">Explore project ↗</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <img src="lavenderreader.png"
-             alt="Historical feminist and LGBTQ+ periodicals">
-
-        <div class="card-content">
-          <div class="card-label">Digital Archives · Periodicals</div>
-          <h3>Periodicals & Community Memory</h3>
-          <p>
-            Working with historical feminist and LGBTQ+
-            publications to support their description,
-            discovery, and preservation.
-          </p>
-          <a class="card-link" href="library.html">Explore project ↗</a>
-        </div>
-      </article>
-
-    </div>
   </section>
 
-  <!-- 02 DIGITAL MEDIA AND VISUAL CULTURE -->
+  <section class="footer-bar">
+    <div class="footer-left">
+      Sophie Mearns – Archivist
+    </div>
 
-  <section class="content-section creative-section" id="media">
-    <div class="section-number">02 / Creative Practice</div>
+    <div class="footer-center">
+      Los Angeles, California<br>
+      (619) 873-8378<br>
+      sbmearns@g.ucla.edu
+    </div>
 
-    <h2 class="section-heading">Digital Media & Visual Culture</h2>
-
-    <p class="section-intro">
-      An interest in the visual language of media and the ways
-      photography, design, and editorial storytelling shape
-      cultural narratives and collective memory.
-    </p>
-
-    <div class="creative-grid">
-
-      <article class="creative-item">
-        <h3>Editorial & Graphic Design</h3>
-        <p>
-          Visual communication, typography, graphic design,
-          and editorial composition. Interested in the
-          relationship between design, publishing, and
-          cultural documentation.
-        </p>
-      </article>
-
-      <article class="creative-item">
-        <h3>Photography & Visual Archives</h3>
-        <p>
-          An interest in photographic archives, editorial imagery,
-          and the preservation of visual histories, particularly
-          those documenting women's lives and cultural movements.
-        </p>
-      </article>
-
-      <article class="creative-item">
-        <h3>Digital Storytelling</h3>
-        <p>
-          Digital content creation and research-driven storytelling,
-          exploring how historical and cultural subjects can be
-          translated for contemporary audiences.
-        </p>
-      </article>
-
-      <article class="creative-item">
-        <h3>Periodicals & Print Culture</h3>
-        <p>
-          Independent publications, fashion magazines, feminist
-          periodicals, and editorial photography as records of
-          identity, sexuality, and social history.
-        </p>
-      </article>
-
+    <div class="footer-right">
+      <br>
+      Powered by <a href="#">GitHub</a>
     </div>
   </section>
-
-  <!-- 03 RESEARCH AND WRITING -->
-
-  <section class="content-section" id="research">
-    <div class="section-number">03 / Academic Interests</div>
-
-    <h2 class="section-heading">Research & Writing</h2>
-
-    <p class="section-intro">
-      Research at the intersection of archival ethics, gender,
-      representation, and the politics of historical memory.
-      Interested in who gets documented, who controls the record,
-      and whose histories become accessible.
-    </p>
-
-    <div class="research-grid">
-
-      <article class="research-item">
-        <h3>Gender & the Historical Record</h3>
-        <p>
-          Women's history, feminist archives, queer communities,
-          and the ways marginalized groups document their own
-          experiences in response to historical exclusion.
-        </p>
-      </article>
-
-      <article class="research-item">
-        <h3>Archival Ethics & Privacy</h3>
-        <p>
-          Privacy, consent, digitization, and institutional
-          responsibility when providing access to sensitive
-          historical materials and personal information.
-        </p>
-      </article>
-
-      <article class="research-item">
-        <h3>Reproductive Justice & Borders</h3>
-        <p>
-          Gender, immigration enforcement, reproductive autonomy,
-          and the role of institutional power in shaping access
-          to healthcare and bodily autonomy.
-        </p>
-      </article>
-
-      <article class="research-item">
-        <h3>Periodicals as Cultural Memory</h3>
-        <p>
-          Magazines and independent publications as historical
-          records of women's identities, sexuality, fashion,
-          politics, and cultural movements.
-        </p>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-    <div>
-      <h2>Sophie Mearns</h2>
-      <p>Archives · Media · Visual Culture</p>
-      <p>Los Angeles, California</p>
-    </div>
-
-    <div>
-      <p>Get in touch</p>
-      <p><a href="mailto:sbmearns@g.ucla.edu">sbmearns@g.ucla.edu</a></p>
-      <p><a href="cv.html">Curriculum Vitae ↗</a></p>
-    </div>
-  </footer>
 
 </body>
-</html>
